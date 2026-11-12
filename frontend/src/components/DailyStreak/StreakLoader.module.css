@@ -1,0 +1,35 @@
+.loaderWrap {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.orb {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.25), rgba(15, 16, 38, 0.96));
+  border: 1.5px solid rgba(251, 191, 36, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.35);
+}
+
+.loaderTitle {
+  font-family: var(--vl-font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vl-text-primary);
+}
+
+.loaderHint {
+  font-size: 0.82rem;
+  color: var(--vl-text-secondary);
+}
+

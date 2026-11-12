@@ -1,0 +1,164 @@
+.authScreen {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.2), transparent 45%),
+    radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.14), transparent 42%),
+    var(--vl-bg-canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 22px;
+  padding: 1.85rem 1.5rem;
+  background: linear-gradient(180deg, rgba(21, 21, 50, 0.96), rgba(12, 13, 30, 0.98));
+  border: 1px solid rgba(168, 85, 247, 0.34);
+  box-shadow: 0 22px 54px rgba(4, 5, 16, 0.72);
+}
+
+.brandTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 1.15rem;
+}
+
+.brandTitle {
+  margin: 0;
+  font-family: var(--vl-font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--vl-text-primary);
+}
+
+.brandGold {
+  color: var(--vl-gold);
+}
+
+.tabRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+  padding: 0.3rem;
+  border-radius: 12px;
+  background: rgba(10, 11, 26, 0.85);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  margin-bottom: 1.25rem;
+}
+
+.tabBtn {
+  border: none;
+  border-radius: 9px;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  color: var(--vl-text-secondary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tabBtnActive {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(109, 40, 217, 0.45));
+  color: var(--vl-text-primary);
+}
+
+.fieldLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vl-text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.darkInput {
+  background-color: rgba(10, 11, 27, 0.9) !important;
+  border: 1px solid rgba(139, 92, 246, 0.28) !important;
+  color: var(--vl-text-primary) !important;
+  border-radius: 11px !important;
+  padding: 0.62rem 0.85rem !important;
+  font-size: 0.9rem !important;
+}
+
+.darkInput:focus {
+  border-color: rgba(245, 158, 11, 0.7) !important;
+  box-shadow: 0 0 0 0.2rem rgba(245, 158, 11, 0.16) !important;
+}
+
+.submitBtn {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: #1c1300;
+  font-weight: 800;
+  font-size: 0.94rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.28);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.errorAlert {
+  border-radius: 11px;
+  padding: 0.65rem 0.85rem;
+  background: rgba(248, 113, 113, 0.14);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #fecaca;
+  font-size: 0.82rem;
+  margin-bottom: 0.95rem;
+}
+
+.demoBox {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+.demoTitle {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--vl-text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.demoBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.demoBtn {
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  padding: 0.48rem 0.72rem;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.26);
+  color: var(--vl-text-primary);
+  font-size: 0.77rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.demoBtn:hover {
+  border-color: rgba(245, 158, 11, 0.55);
+  background: rgba(139, 92, 246, 0.22);
+}
+
+.demoDesc {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--vl-text-muted);
+}
+

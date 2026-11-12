@@ -1,0 +1,65 @@
+.footerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.78rem 0.95rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(18, 19, 44, 0.94), rgba(12, 13, 30, 0.98));
+  border: 1px solid rgba(139, 92, 246, 0.24);
+  text-decoration: none;
+  color: var(--vl-text-primary);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.footerBar:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  color: var(--vl-text-primary);
+}
+
+.leftPart {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.textGroup {
+  min-width: 0;
+}
+
+.primaryLine {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--vl-text-primary);
+}
+
+.domainHighlight {
+  color: var(--vl-gold);
+}
+
+.secondaryLine {
+  font-size: 0.7rem;
+  color: var(--vl-text-secondary);
+}
+
+.chevron {
+  color: var(--vl-text-secondary);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .footerBar {
+    padding: 0.95rem 1.25rem;
+  }
+
+  .primaryLine {
+    font-size: 0.88rem;
+  }
+
+  .secondaryLine {
+    font-size: 0.78rem;
+  }
+}
+

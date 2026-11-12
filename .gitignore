@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment variables (keep .env.example templates tracked)
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# Build & cache outputs
+dist/
+build/
+coverage/
+.vite/
+
+# Logs & OS files
+logs/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

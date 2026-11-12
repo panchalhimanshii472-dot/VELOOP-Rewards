@@ -1,0 +1,113 @@
+.skeletonPage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  padding: 0.9rem 0 2rem;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(22, 22, 52, 0.95), rgba(14, 15, 35, 0.96));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(168, 85, 247, 0.14),
+    rgba(251, 191, 36, 0.06),
+    transparent
+  );
+  animation: vlSweep 1.6s infinite;
+}
+
+@keyframes vlSweep {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.pill {
+  height: 34px;
+  width: 112px;
+  border-radius: 999px;
+}
+
+.heroBlock {
+  height: 116px;
+  border-radius: 18px;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.statBlock {
+  height: 62px;
+  border-radius: 14px;
+}
+
+.ultimateBlock {
+  height: 98px;
+  border-radius: 18px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.cardBlock {
+  height: 176px;
+  border-radius: 14px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.infoBlock {
+  height: 92px;
+  border-radius: 14px;
+}
+
+@media (min-width: 576px) {
+  .cardsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1025px) {
+  .cardsGrid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+

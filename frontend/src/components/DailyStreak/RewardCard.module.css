@@ -1,0 +1,230 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.62rem 0.42rem 0.56rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(20, 21, 47, 0.96) 0%, rgba(12, 13, 31, 0.98) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  min-height: 176px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardClaimed {
+  border-color: rgba(34, 197, 94, 0.42);
+  background: linear-gradient(180deg, rgba(16, 32, 34, 0.96) 0%, rgba(11, 20, 26, 0.98) 100%);
+}
+
+.cardToday {
+  border-color: rgba(245, 158, 11, 0.78);
+  background: radial-gradient(circle at 50% 28%, rgba(245, 158, 11, 0.16), transparent 62%),
+    linear-gradient(180deg, rgba(31, 24, 52, 0.98) 0%, rgba(17, 16, 38, 0.99) 100%);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.2);
+}
+
+.cardVip {
+  border-color: rgba(245, 158, 11, 0.48);
+  background: radial-gradient(circle at 50% 25%, rgba(245, 158, 11, 0.12), transparent 64%),
+    linear-gradient(180deg, rgba(27, 22, 46, 0.97) 0%, rgba(14, 14, 34, 0.99) 100%);
+}
+
+.cardTop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2rem;
+  min-height: 20px;
+}
+
+.dayLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--vl-text-primary);
+  white-space: nowrap;
+}
+
+.dayLabelVip {
+  color: var(--vl-gold);
+}
+
+.checkCircle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--vl-green);
+  color: #052e16;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pillBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.14rem 0.42rem;
+  border-radius: 999px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.badgeToday {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #1c1300;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.35);
+}
+
+.badgePurple {
+  background: rgba(139, 92, 246, 0.24);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: #d8b4fe;
+}
+
+.badgeVip {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  color: #fde68a;
+}
+
+.artSlot {
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+}
+
+.metaBlock {
+  width: 100%;
+}
+
+.rewardTitle {
+  font-size: 0.65rem;
+  color: var(--vl-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rewardAmount {
+  font-family: var(--vl-font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.18;
+  margin-top: 0.1rem;
+  color: #c084fc;
+}
+
+.amountClaimed {
+  color: var(--vl-green-soft);
+}
+
+.amountToday {
+  color: #fef3c7;
+}
+
+.amountVip {
+  color: var(--vl-gold);
+}
+
+.rewardSubtitle {
+  font-size: 0.62rem;
+  color: var(--vl-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.42rem;
+}
+
+.actionPill,
+.claimButton {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.34rem 0.35rem;
+  font-size: 0.67rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.22rem;
+  border: none;
+  white-space: nowrap;
+}
+
+.claimButton {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: #1c1300;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.claimButton:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.claimButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.claimedPill {
+  background: rgba(34, 197, 94, 0.16);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+  color: var(--vl-green-soft);
+}
+
+.lockedPill {
+  background: rgba(15, 16, 36, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: var(--vl-text-muted);
+}
+
+.timerPill {
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.38);
+  color: #e9d5ff;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.64rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 0.85rem 0.68rem 0.78rem;
+    min-height: 205px;
+    border-radius: 16px;
+  }
+
+  .dayLabel {
+    font-size: 0.8rem;
+  }
+
+  .pillBadge {
+    font-size: 0.66rem;
+    padding: 0.18rem 0.5rem;
+  }
+
+  .rewardTitle {
+    font-size: 0.74rem;
+  }
+
+  .rewardAmount {
+    font-size: 1.18rem;
+  }
+
+  .rewardSubtitle {
+    font-size: 0.72rem;
+  }
+
+  .actionPill,
+  .claimButton {
+    padding: 0.44rem 0.5rem;
+    font-size: 0.76rem;
+  }
+}
+

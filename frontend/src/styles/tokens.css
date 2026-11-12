@@ -1,0 +1,48 @@
+:root {
+  --vl-bg-canvas: #060714;
+  --vl-bg-surface: #111229;
+  --vl-bg-surface-elevated: #171836;
+  --vl-bg-surface-soft: rgba(25, 24, 58, 0.72);
+  --vl-border-subtle: rgba(139, 92, 246, 0.22);
+  --vl-border-purple: rgba(168, 85, 247, 0.42);
+  --vl-border-gold: rgba(245, 158, 11, 0.65);
+  --vl-border-green: rgba(34, 197, 94, 0.48);
+
+  --vl-text-primary: #f8fafc;
+  --vl-text-secondary: #a5acc8;
+  --vl-text-muted: #767d9c;
+
+  --vl-purple: #8b5cf6;
+  --vl-purple-bright: #b07cff;
+  --vl-gold: #fbbf24;
+  --vl-gold-deep: #f59e0b;
+  --vl-green: #22c55e;
+  --vl-green-soft: #4ade80;
+  --vl-danger: #f87171;
+
+  --vl-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vl-font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--vl-bg-canvas);
+  color: var(--vl-text-primary);
+  font-family: var(--vl-font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+

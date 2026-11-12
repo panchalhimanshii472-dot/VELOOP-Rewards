@@ -1,0 +1,95 @@
+.actionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.streakPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.48rem 0.92rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(45, 29, 20, 0.9), rgba(24, 18, 42, 0.92));
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: var(--vl-text-primary);
+  font-size: 0.86rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
+}
+
+.streakFlame {
+  color: #f97316;
+  flex-shrink: 0;
+}
+
+.keepGoingTag {
+  display: none;
+  color: #fcd34d;
+  font-weight: 500;
+  font-size: 0.78rem;
+  padding-left: 0.45rem;
+  border-left: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.calendarBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(19, 20, 44, 0.92);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--vl-text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.calendarBtn:hover {
+  border-color: var(--vl-border-purple);
+  color: var(--vl-text-primary);
+  background: rgba(34, 30, 74, 0.95);
+}
+
+.calendarIcon {
+  color: var(--vl-purple-bright);
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.countdownBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.46rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.38);
+  color: #e9d5ff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .keepGoingTag {
+    display: inline-block;
+  }
+
+  .streakPill,
+  .calendarBtn {
+    font-size: 0.9rem;
+    padding: 0.54rem 1.08rem;
+  }
+}
+

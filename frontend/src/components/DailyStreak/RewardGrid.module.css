@@ -1,0 +1,82 @@
+.sectionDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.2rem 0 0.95rem;
+  text-align: center;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.35), transparent);
+}
+
+.dividerText {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--vl-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sparkle {
+  color: #c084fc;
+  font-size: 0.75rem;
+}
+
+.gridSeven {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1.35rem;
+}
+
+.spanFullMobile {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 360px) {
+  .gridSeven {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .spanTopRow {
+    grid-column: span 3;
+  }
+
+  .spanBottomRow {
+    grid-column: span 4;
+  }
+
+  .spanFullMobile {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 768px) {
+  .gridSeven {
+    gap: 0.85rem;
+  }
+
+  .dividerText {
+    font-size: 0.96rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .gridSeven {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .spanTopRow,
+  .spanBottomRow,
+  .spanFullMobile {
+    grid-column: span 1;
+  }
+}
+

@@ -1,0 +1,35 @@
+.artWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+  pointer-events: none;
+}
+
+.softGlowPurple {
+  filter: drop-shadow(0 8px 16px rgba(139, 92, 246, 0.32));
+}
+
+.softGlowGold {
+  filter: drop-shadow(0 8px 18px rgba(245, 158, 11, 0.34));
+}
+
+.monogramBadge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #2a2155, #121024);
+  border: 1.5px solid rgba(251, 191, 36, 0.72);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--vl-font-display);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #fbbf24;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+  flex-shrink: 0;
+}
+

@@ -14,13 +14,18 @@ function createApp() {
 
   const allowedOrigins = env.corsOrigin
     .split(',')
-    .map((item) => item.trim())
+    .map((item) => item.trim().replace(/\/+$/, ''))
     .filter(Boolean);
 
   app.use(
     cors({
       origin(origin, callback) {
-        if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+        const normalizedOrigin = origin ? origin.replace(/\/+$/, '') : '';
+        if (
+          !origin ||
+          allowedOrigins.includes('*') ||
+          allowedOrigins.includes(normalizedOrigin)
+        ) {
           return callback(null, true);
         }
         return callback(null, false);

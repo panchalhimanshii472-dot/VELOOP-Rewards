@@ -108,7 +108,10 @@ export default function DailyStreakPage() {
     };
   }, [fetchDashboard, phase]);
 
+  const isRefreshingExpiredRef = useRef(false);
   const handleCountdownExpired = useCallback(async () => {
+    if (isRefreshingExpiredRef.current) return;
+    isRefreshingExpiredRef.current = true;
     try {
       const statusData = await getStreakStatus();
       if (!mountedRef.current) return;
@@ -117,12 +120,24 @@ export default function DailyStreakPage() {
       }
     } catch {
       // Silent retry handled by manual refresh or next interaction.
+    } finally {
+      window.setTimeout(() => {
+        isRefreshingExpiredRef.current = false;
+      }, 15000);
     }
   }, [fetchDashboard]);
 
+  const isCountdownActive = Boolean(
+    dashboard?.streak &&
+    !dashboard.streak.canClaim &&
+    dashboard.streak.nextClaimAt &&
+    dashboard.serverTime &&
+    Date.parse(dashboard.streak.nextClaimAt) > Date.parse(dashboard.serverTime)
+  );
+
   const { formattedTime } = useServerCountdown({
-    serverTime: dashboard?.serverTime,
-    nextClaimAt: dashboard?.streak?.nextClaimAt,
+    serverTime: isCountdownActive ? dashboard?.serverTime : null,
+    nextClaimAt: isCountdownActive ? dashboard?.streak?.nextClaimAt : null,
     onExpired: handleCountdownExpired,
   });
 

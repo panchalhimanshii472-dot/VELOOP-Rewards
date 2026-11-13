@@ -52,11 +52,9 @@ export function useServerCountdown({ serverTime, nextClaimAt, onExpired }) {
     const initial = computeRemaining();
     setRemainingMs(initial);
 
+    // If initial is already zero or in the past, no countdown is needed.
+    // NEVER call onExpired here to prevent recursive fetch/update loops.
     if (initial <= 0) {
-      if (!expiredTriggeredRef.current && onExpiredRef.current) {
-        expiredTriggeredRef.current = true;
-        onExpiredRef.current();
-      }
       return undefined;
     }
 
@@ -82,4 +80,3 @@ export function useServerCountdown({ serverTime, nextClaimAt, onExpired }) {
     isActive: remainingMs !== null && remainingMs > 0,
   };
 }
-

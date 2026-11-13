@@ -90,6 +90,7 @@ export default function AuthPage({ initialMode = 'login' }) {
             aria-selected={mode === 'login'}
             className={`${styles.tabBtn} ${mode === 'login' ? styles.tabBtnActive : ''}`}
             onClick={() => handleModeSwitch('login')}
+            disabled={submitting}
           >
             Login
           </button>
@@ -99,6 +100,7 @@ export default function AuthPage({ initialMode = 'login' }) {
             aria-selected={mode === 'register'}
             className={`${styles.tabBtn} ${mode === 'register' ? styles.tabBtnActive : ''}`}
             onClick={() => handleModeSwitch('register')}
+            disabled={submitting}
           >
             Register
           </button>
@@ -125,6 +127,7 @@ export default function AuthPage({ initialMode = 'login' }) {
                 onChange={(e) => setName(e.target.value)}
                 required
                 minLength={2}
+                disabled={submitting}
               />
             </div>
           )}
@@ -141,6 +144,7 @@ export default function AuthPage({ initialMode = 'login' }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              disabled={submitting}
             />
           </div>
 
@@ -157,6 +161,7 @@ export default function AuthPage({ initialMode = 'login' }) {
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={6}
+              disabled={submitting}
             />
           </div>
 
@@ -179,6 +184,7 @@ export default function AuthPage({ initialMode = 'login' }) {
                   type="button"
                   className={styles.demoBtn}
                   onClick={() => applyDemoCredentials(acct.email)}
+                  disabled={submitting}
                 >
                   <strong>{acct.label}</strong>
                   <span className={styles.demoDesc}>{acct.desc}</span>

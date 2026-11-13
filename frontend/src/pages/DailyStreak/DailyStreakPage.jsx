@@ -89,10 +89,14 @@ export default function DailyStreakPage() {
     return () => window.clearTimeout(timer);
   }, [fetchDashboard]);
 
-  // Keep multi-tab browser windows synced with backend state on focus
+  // Keep multi-tab browser windows synced with backend state on focus (throttled)
   useEffect(() => {
+    let lastRefreshTime = 0;
     const handleFocusRefresh = () => {
+      const now = Date.now();
+      if (now - lastRefreshTime < 15000) return;
       if (document.visibilityState === 'visible' && phase === 'ready' && !claimLockRef.current) {
+        lastRefreshTime = now;
         fetchDashboard({ showSkeleton: false });
       }
     };

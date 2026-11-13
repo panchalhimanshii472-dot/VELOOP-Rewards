@@ -18,8 +18,9 @@ function getClientIp(req) {
  * Global API rate limiter for standard routes.
  * Skips:
  * 1. OPTIONS preflight requests (CORS).
- * 2. /health check endpoint (Render uptime monitors / load balancers).
- * 3. /auth/login & /auth/register (protected by dedicated authLimiter).
+ * 2. Localhost requests during local development.
+ * 3. /health check endpoint (Render uptime monitors / load balancers).
+ * 4. /auth/login & /auth/register (protected by dedicated authLimiter).
  */
 const apiLimiter = rateLimit({
   windowMs: env.rateLimitWindowMs,
@@ -30,6 +31,15 @@ const apiLimiter = rateLimit({
   keyGenerator: getClientIp,
   skip: (req) => {
     if (req.method === 'OPTIONS') return true;
+
+    // Never throttle localhost in local development
+    if (env.nodeEnv !== 'production') {
+      const ip = getClientIp(req);
+      if (ip === '127.0.0.1' || ip === '::1' || ip === '::ffff:127.0.0.1' || ip === 'localhost') {
+        return true;
+      }
+    }
+
     const url = req.originalUrl || req.url || '';
     if (url.includes('/health') || req.path === '/health') return true;
     if (url.includes('/auth/login') || url.includes('/auth/register')) return true;
@@ -48,12 +58,12 @@ const apiLimiter = rateLimit({
 
 /**
  * Dedicated authentication limiter for login and registration.
- * Allows 10-15 failed attempts per 15 minutes per IP.
+ * Allows failed attempts per 15 minutes per IP.
  * Crucially: skipSuccessfulRequests is true so legitimate logins NEVER count towards the limit.
  */
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: env.authRateLimitMax || 15,
+  max: env.authRateLimitMax || 20,
   skipSuccessfulRequests: true,
   skipFailedRequests: false,
   standardHeaders: 'draft-7',

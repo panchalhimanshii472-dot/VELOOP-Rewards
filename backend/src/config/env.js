@@ -22,9 +22,9 @@ const env = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:5173',
   rateLimitWindowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000,
-  rateLimitMaxRequests: Number(process.env.RATE_LIMIT_MAX_REQUESTS) || 1000,
-  authRateLimitMax: Number(process.env.AUTH_RATE_LIMIT_MAX) || 20,
-  claimRateLimitMax: Number(process.env.CLAIM_RATE_LIMIT_MAX) || 60,
+  rateLimitMaxRequests: Math.max(Number(process.env.RATE_LIMIT_MAX_REQUESTS) || 1000, 1000),
+  authRateLimitMax: Math.max(Number(process.env.AUTH_RATE_LIMIT_MAX) || 20, 20),
+  claimRateLimitMax: Math.max(Number(process.env.CLAIM_RATE_LIMIT_MAX) || 60, 60),
 };
 
 module.exports = env;
